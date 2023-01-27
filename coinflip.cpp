@@ -8,9 +8,9 @@ using namespace std;
 int random_memory = -1;
 
 class Coin {
-    int side; // 1 is positive, 0 is negative
+    int side; // 1 represent head, 0 represent tail
 public:
-    static int seed; // 种子要static
+    static int seed; // the seed need to be static
 
     int getSide() const {
         return side;
@@ -43,27 +43,25 @@ int Coin::seed = (long)&random_memory;
 int main() {
     while (true) {
         int n;
-        cout << "How many coins do you want to toss:(do not enter a number over 2 million)" << endl;
+        cout << "How many coins do you want to toss:(no more than INT_MAX)" << endl;
         cin >> n;
-        Coin coin[n];
         int count_pos = 0, count_neg = 0;
-        for (int i = 0; i < n; ++i) {
-            if (coin[i].getSide() == 0) {
-                cout << 0 << "\t";
-                count_neg++;
+        for (int i = 0; i <= n; ++i) {
+            Coin *coin = new Coin();
+            if(coin->getSide() == 1){
+                count_pos ++;
             } else {
-                cout << 1 << "\t";
-                count_pos++;
+                count_neg ++;
             }
-            if((i+1)%9 == 0){
-                cout <<endl;
-            }
+            delete coin;
+
         }
+
         cout << endl;
-        cout << "The total positive number is:" << count_pos << endl;
-        cout << "The total negative number is:" << count_neg << endl;
+        cout << "The total head times is:" << count_pos << endl;
+        cout << "The total tail times is:" << count_neg << endl;
         float prob_pos = (float) count_pos / n;
-        cout << "The probability of positive is:" << prob_pos << endl;
+        cout << "The probability of head is:" << prob_pos << endl;
         cout << "Do you want to paly again?(Y/N)" << endl;
         char respond;
         cin >> respond;
