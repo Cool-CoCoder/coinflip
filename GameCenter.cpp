@@ -41,7 +41,7 @@ int main() {
         cout << ">" ;
         char c;
         cin >> c;
-        if(c == 'Y') break;
+        if(c == 'N') break;
     }
 
 }

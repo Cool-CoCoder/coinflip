@@ -15,7 +15,7 @@ public:
     int addIndex; // range 0~5, for
     Revolver();
 
-    bool AddBullet();
+    void AddBullet();
     // It will return 1 or 0, 1 means the gun shoot a bullet so one man will die
     bool Shoot();
     void setIndex(int);
