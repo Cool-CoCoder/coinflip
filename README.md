@@ -1,5 +1,6 @@
 # cppgame-randomGame
 
+## 简介
 命令行随机小游戏
 
 1. 随机抛数枚硬币,程序会告诉你正反的数量.
@@ -12,6 +13,10 @@
 
 最后,如果大家有什么好玩的点子欢迎在Discussions中讨论.
 
+## 使用方法
+本项目没有makefile,如果感兴趣直接把源文件下载并编译后,找到GameCenter.cpp,利用main启动即可.
+
+## 展示
 ```
 Which game do you want to play?(give the number)
 1.Tossing coins.
